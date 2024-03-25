@@ -33,7 +33,6 @@
     "@backstage/config": "workspace:^",
     "@backstage/integration": "workspace:^",
     "@backstage/plugin-adr-backend": "workspace:^",
-    "@backstage/plugin-app-backend": "workspace:^",
     "@backstage/plugin-auth-backend": "workspace:^",
     "@backstage/plugin-auth-node": "workspace:^",
     "@backstage/plugin-azure-devops-backend": "workspace:^",

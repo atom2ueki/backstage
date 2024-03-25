@@ -55,7 +55,6 @@ import search from './plugins/search';
 import techdocs from './plugins/techdocs';
 import techInsights from './plugins/techInsights';
 import todo from './plugins/todo';
-import app from './plugins/app';
 import badges from './plugins/badges';
 import jenkins from './plugins/jenkins';
 import permission from './plugins/permission';
@@ -166,7 +165,6 @@ async function main() {
   const todoEnv = useHotMemoize(module, () => createEnv('todo'));
   const kubernetesEnv = useHotMemoize(module, () => createEnv('kubernetes'));
   const kafkaEnv = useHotMemoize(module, () => createEnv('kafka'));
-  const appEnv = useHotMemoize(module, () => createEnv('app'));
   const badgesEnv = useHotMemoize(module, () => createEnv('badges'));
   const jenkinsEnv = useHotMemoize(module, () => createEnv('jenkins'));
   const adrEnv = useHotMemoize(module, () => createEnv('adr'));
@@ -221,7 +219,6 @@ async function main() {
     .addRouter('', await healthcheck(healthcheckEnv))
     .addRouter('', metricsHandler())
     .addRouter('/api', apiRouter)
-    .addRouter('', await app(appEnv));
 
   await service.start().catch(err => {
     logger.error(err);
